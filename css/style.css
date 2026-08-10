@@ -1,17 +1,22 @@
 .top-nav{
+    display:block;
     display: flex;
     justify-content: space-between;
     margin: 0;
-    padding:0;
-    font-family:sans-serif;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 32px;
+    padding-right: 32px;
+    font-family: sans-serif;
     font-size: 2cap;
+    font-width:40px;
     white-space: nowrap;
     border-style: solid;
-    border-bottom-width:1px;
-    border-top:hidden;
+    border-bottom-width: 1px;
+    border-top: hidden;
     border-left: hidden;
-    border-right:hidden;
-    border-color: #ff9900;
+    border-right: hidden;
+    border-color: #F7F0E3;
 }
 .top-nav a{
     margin-left:1mm;
@@ -20,29 +25,32 @@
     text-decoration: none;
 }
 .top-nav a:hover{
-    color:#ff9900cc;
+    opacity: 0.75;
 }
 .top-nav a:active{
-    color:#ff990099;
+    opacity: 0.50;
 }
 .logo{
     max-height: 2cap;
 }
 .whole-page{
-    border: 0mm;
-    padding: 0mm;
-    margin: 0mm;
+    margin: 0;
     display: flex;
     display: block;
-    background-color: #141414;
-    font-family:monospace;
+    background-color: #F7F0E3;
 }
 .main-page{ 
     margin:1mm;
+
     padding:0;
     max-height: 100%;
     font-family:monospace;
     font-size: 2cap;
-    color:rgb(240, 248, 255);
-
+    color:#000000;
+    background-color: #ffb84d;
+    border-radius: 1mm;
+}
+.contact-icon{
+    max-height: 1cm;
+    margin: 1mm;
 }
