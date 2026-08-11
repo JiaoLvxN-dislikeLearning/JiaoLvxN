@@ -31,14 +31,14 @@
     opacity: 0.50;
 }
 .whole-page{
-    display: flex;
     display: block;
     background-color: #F7F0E3;
     margin: 0 ;
 }
 .main-page{ 
     padding:1mm;
-    font-family: cursive;
+    font-family:sans-serif;
+    font-weight: 600;
     font-size: 5mm;
     color:#000000;
     background-color: #ffb84d80;
@@ -52,6 +52,29 @@
 .icon{
     max-height: 5mm;
     margin: 1mm;
+}
+.morepage-link{
+    justify-content: center;
+    text-align: center;
+    margin: 1cap auto;
+    padding:1mm;
+    font-family:sans-serif;
+    font-weight: 600;
+    font-size: 5mm;
+    width: max-content;
+    color:#000000;
+}
+.morepage-link a{
+    margin: 1px;
+    padding: 1mm;
+    margin-bottom: 1mm;
+    color:#000000;
+    text-decoration: none;
+    text-align: center;
+    background-color: #ffffff9f;
+    border: #000000;
+    border-radius: 1mm;
+    float: left;
 }
 body{
     padding-top: 2cm;
