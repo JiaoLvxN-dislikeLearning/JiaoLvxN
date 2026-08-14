@@ -5,27 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/navload.js"></script>
+    <link rel="icon" href="/assets/icon/favicon.webp">
 </head>
 <body class="whole-page">
     <div id="nav"></div>
     <div class="main-page">
-        about page
+        这个网站是干什么的?
+    </div>
+    <div id="random-text"></div>
+    <br>
+    <div class="main-page">
+        怎么找到我?
+        <br>
+        <a href="https://github.com/JiaoLvxN-dislikeLearning"><img src="/assets/icon/github-fill.webp" class="icon"></a>
+        <a href="https://discordapp.com/users/1381515895918039153"><img src="/assets/icon/discord-fill.webp" class="icon"></a>
+        <a href="https://www.youtube.com/@JiaoLvxN"><img src="/assets/icon/youtube-fill.webp" class="icon"></a>
+        <a href="https://blog.superorange.ccwu.cc/"><img src="/assets/icon/news-fill.webp" class="icon"></a>
     </div>
     <br>
     <div class="main-page">
-        <br>
-        how to contact auther
-        <br>
-        <a href="https://github.com/JiaoLvxN-dislikeLearning"><img src="/assets/icon/github-fill.png" class="icon"></a>
-        <br>
-        <a href="https://discordapp.com/users/1381515895918039153"><img src="/assets/icon/discord-fill.png" class="icon"></a>
-        <br>
-    </div>
-    <br>
-    <div class="main-page">
-        or send email to orange@jiaolvxn.ccwu.cc
+        或者向orange@jiaolvxn.ccwu.cc发送邮件
     </div>
 
-    <script src="/js/navload.js"></script>
+    
+    <script src="/js/randomtextload.js"></script>
+    <script>
+        fetch('/components/randomtext.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('random-text').innerHTML = html;
+                RandomText('textBox');
+            })
+            .catch(err => console.error('加载组件失败:', err));
+    </script>
 </body>
 </html>
