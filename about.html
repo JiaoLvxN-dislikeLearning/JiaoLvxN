@@ -27,17 +27,7 @@
     <div class="main-page">
         或者向orange@jiaolvxn.ccwu.cc发送邮件
     </div>
-
-    
     <script src="/js/randomtextload.js"></script>
-    <script>
-        fetch('/components/randomtext.html')
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById('random-text').innerHTML = html;
-                RandomText('textBox');
-            })
-            .catch(err => console.error('加载组件失败:', err));
-    </script>
+    <script>fetch('/components/randomtext.html').then(res => res.text()).then(html => {document.getElementById('random-text').innerHTML = html;RandomText('textBox');}).catch(err => console.error('加载组件失败:', err));</script>
 </body>
 </html>
