@@ -100,6 +100,7 @@ body {
     border-bottom: 1px solid var(--border-light);
     box-shadow: var(--nav-shadow);
     z-index: 114514;
+    perspective: 800px;
 }
 .top-nav a {
     margin: 0 1mm;
@@ -476,4 +477,15 @@ body {
 @keyframes ImComingFromTheRight {
     0% { opacity: 0; transform: translateX(10mm); }
     100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes logo {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(720deg); }
+}
+.logo {
+    display: inline-block;
+    animation: logo 2s linear infinite;
+}
+#stars-canvas {
+    transition: opacity 1.2s ease;
 }
