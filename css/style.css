@@ -42,6 +42,8 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     animation: fadeInPage 0.35s ease-out both;
+    padding-left:15px;
+    padding-right:15px;
 }
 .whole-page.fade-out {
     animation: fadeOutPage 0.3s ease-in forwards !important;
@@ -82,15 +84,15 @@ body {
 .randomText:hover { opacity: 0.8; }
 .randomText:active { transform: scale(0.9); }
 .top-nav {
-    margin: auto;
+    margin: 0 auto;
     position: fixed;
     display: flex;
     overflow: auto;
-    top: 10px;
-    left: 3%;
-    right: 5%;
-    width: 80%;
+    top: 8px;
+    width: 600px;
     padding: 8px 32px;
+    left:0;
+    right:0;
     justify-content: space-between;
     font-weight: 900;
     font-size: 2cap;
@@ -110,8 +112,20 @@ body {
     border-radius: 2mm;
     text-shadow: 0 1px 0 #0000001a, 0 -1px 0 #ffffff80;
 }
-.top-nav a:hover { background-color: #4b4b4b10; }
-.top-nav a:active { background-color: #4b4b4b40; }
+.top-nav a:hover {
+     background-color: #4b4b4b10; 
+}
+.top-nav a:active {
+     background-color: #4b4b4b40; 
+}
+@keyframes logo {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(720deg); }
+}
+.logo {
+    display: inline-block;
+    animation: logo 2s linear infinite;
+}
 @keyframes RollNews {
     0% { opacity: 0; }
     2% { opacity: 1; }
@@ -123,10 +137,13 @@ body {
     width: 1000px;
     height: 300px;
     margin: 0 auto 10px auto;
+    left:0;
+    right:0;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
     border-radius: 2mm;
+    scale:80%;
 }
 .news:nth-child(1) { animation-delay: -12s; }
 .news:nth-child(2) { animation-delay: -8s; }
@@ -139,12 +156,12 @@ body {
     height: 300px;
     background-color: var(--bg-color);
     animation: RollNews 16s ease-in-out infinite;
-    text-align: center;
+    align-items: center;
 }
 .news img {
-    width: 1000px;
-    height: 300px;
-    object-fit: cover;
+    width: max-content;
+    height: max-content;
+    object-fit: contain;
 }
 .morepage-title {
     font-family: sans-serif;
@@ -228,6 +245,8 @@ body {
     100% { transform: translateY(0px); }
 }
 .videoplayer {
+    left: 0;
+    right: 0;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -257,6 +276,10 @@ body {
     border-radius: 1mm;
     overflow: hidden;
     animation: ImComingFromTheLeft 0.5s ease-out both;
+}
+.videoplayer-video iframe {
+    width:750px;
+    height:400px;
 }
 .videoplayer-choose {
     padding-top: 15px;
@@ -299,12 +322,12 @@ body {
 .gacha-container {
     max-width: 600px;
     margin: 20px auto;
-    padding: 10px;
+    padding: 5px 10px;
     background: var(--card-bg);
     border-radius: 16px;
     text-align: center;
     box-shadow: var(--box-shadow-color) 0 4px 20px;
-    transition: background 0.3s;
+    transition: 0.3s ease;
 }
 .gacha-title {
     font-size: 28px;
@@ -336,12 +359,9 @@ body {
 .gacha-btn:active { transform: scale(0.96); }
 .gacha-result {
     margin: 25px 0;
-    min-height: 120px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    padding: 10px;
     background: var(--bg-color);
     border-radius: 12px;
     transition: background 0.3s;
@@ -351,6 +371,7 @@ body {
     height: 140px;
     perspective: 800px;
     cursor: default;
+    margin:15px 10px;
 }
 .gacha-card-inner {
     position: relative;
@@ -478,14 +499,113 @@ body {
     0% { opacity: 0; transform: translateX(10mm); }
     100% { opacity: 1; transform: translateX(0); }
 }
-@keyframes logo {
-    0% { transform: rotateZ(0deg); }
-    100% { transform: rotateZ(720deg); }
-}
-.logo {
-    display: inline-block;
-    animation: logo 2s linear infinite;
-}
 #stars-canvas {
     transition: opacity 1.2s ease;
+}
+@media (max-width: 1234px) {
+    .top-nav {
+        width: 600px;
+    }
+    .news-roll {
+        width:600px;
+        height:180px;
+    }
+    .news-roll img{
+        width:600px;
+        height:180px;
+    }
+    .morepage-link {
+        width:1000px;
+    }
+}
+@media (max-width: 1024px) {
+    .morepage-link {
+        width:830px;
+    }
+    .videoplayer {
+        scale:0.7;
+    }
+}
+@media (max-width: 900px) {
+    .top-nav {
+        width: 400px;
+        font-size: 20px;
+    }
+    .news-roll img{
+        width:600px;
+        height:180px;
+    }
+    .morepage-link {
+        width:660px;
+    }
+    .gacha-container{
+        scale:0.9;
+        font-size:20px;
+    }
+    .videoplayer{
+        width:650px;
+        margin:0 auto;
+        left:0;
+        right:0;
+    }
+    .videoplayer-main{
+        width:auto;
+        display:flex;
+        flex-direction:column;
+    }
+    .videoplayer-video{
+        width:650px;
+    }
+    .videoplayer-video iframe{
+        width:650px;
+        height:350px;
+    }
+    .videoplayer-choose{
+        gap:10px;
+        padding:10px;
+        width:auto;
+    }
+    .videoplayer-choose a{
+        margin-left:10px;
+    }
+}
+@media (max-width: 700px) {
+    .top-nav {
+        width: 400px;
+        font-size:18px;
+    }
+    .news-roll {
+        width:500px;
+        height:150px;
+    }
+    .news-roll img{
+        width:500px;
+        height:150px;
+    }
+    .morepage-link {
+        width:490px;
+    }
+    .gacha-container{
+        scale:0.8;
+        font-size:15px;
+    }
+    .videoplayer{
+        width:500px;
+    }
+    .videoplayer-video{
+        width:500px;
+    }
+    .videoplayer-video iframe{
+        width:500px;
+        height:280px;
+    }
+}
+@media (max-width: 500px) {
+    .morepage-link {
+        width:320px;
+    }
+    .gacha-container{
+        font-size:10px;
+        width:450px;
+    }
 }
