@@ -1,3 +1,48 @@
+(function randomFavicon() {
+    const iconList = [
+        './assets/icon/favicon1.webp',
+        './assets/icon/favicon2.webp',
+        './assets/icon/favicon3.webp',
+        './assets/icon/favicon4.webp',
+        './assets/icon/favicon5.webp',
+        './assets/icon/favicon6.webp',
+        './assets/icon/favicon7.webp',
+        './assets/icon/favicon8.webp',
+        './assets/icon/favicon9.webp',
+        './assets/icon/favicon10.webp',
+        './assets/icon/favicon11.webp',
+        './assets/icon/favicon12.webp',
+        './assets/icon/favicon13.webp',
+        './assets/icon/favicon14.webp',
+        './assets/icon/favicon15.webp',
+        './assets/icon/favicon16.webp',
+        './assets/icon/favicon17.webp',
+        './assets/icon/favicon18.webp',
+        './assets/icon/favicon19.webp',
+        './assets/icon/favicon20.webp',
+        './assets/icon/favicon21.webp',
+        './assets/icon/favicon22.webp',
+        './assets/icon/favicon23.webp',
+        './assets/icon/favicon24.webp',
+    ];
+    if (iconList.length === 0) return;
+    const lastIcon = localStorage.getItem('lastFavicon');
+    let available = iconList;
+    if (lastIcon && iconList.length > 1) {
+        available = iconList.filter(path => path !== lastIcon);
+    }
+    const randomIcon = available[Math.floor(Math.random() * available.length)];
+    localStorage.setItem('lastFavicon', randomIcon);
+    let link = document.querySelector('link[rel="icon"]');
+    if (link) {
+        link.href = randomIcon;
+    } else {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        link.href = randomIcon;
+        document.head.appendChild(link);
+    }
+})();
 (function() {
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') {
@@ -68,18 +113,15 @@ document.addEventListener('DOMContentLoaded', function() {
         transition: opacity 1.2s ease;
     `;
         document.body.prepend(canvas);
-
         const ctx = canvas.getContext('2d');
         let stars = [];
         let animationId = null;
         let isDark = false;
-
         function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         generateStars();
         }
-
         function generateStars() {
         const count = 150; 
         stars = [];
@@ -104,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         }
-
         function drawStars(time) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         if (!isDark) {
@@ -140,7 +181,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (animationId) return;
             drawStars();
         }
-
         function updateDarkMode(dark) {
             isDark = dark;
             canvas.style.opacity = dark ? '1' : '0';
@@ -148,17 +188,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 startAnimation();
             }
         }
-
         function getCurrentDark() {
             return document.documentElement.classList.contains('dark');
         }
-
         const observer = new MutationObserver(() => {
             const dark = document.documentElement.classList.contains('dark');
             updateDarkMode(dark);
         });
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-
         window.addEventListener('resize', () => {
             resizeCanvas();
         });
