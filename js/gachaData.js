@@ -1,6 +1,7 @@
 const characters = [
     { name: '常凯申-神装', rarity: '夯', avatar: '/assets/image/card/chiangkaishek_SSR.webp', sound: '/assets/sound/fart.mp3', highlight: true },
     { name: '张雪峰-老师', rarity: '夯', avatar: '/assets/image/card/mr.zhang.webp', sound: '/assets/sound/fahhhhhh.mp3', highlight: true },
+    { name: 'Bmpt', rarity: '夯', avatar: '/assets/image/card/bmpt.webp', sound: '/assets/sound/instagramthud.mp3', highlight: true },
 
     { name: '永雏塔菲', rarity: 'QwQ', avatar: '/assets/image/card/acetaffy.webp' },
     { name: '孙笑川', rarity: 'QwQ', avatar: '/assets/image/card/sunxiaochuan.webp' },
@@ -10,5 +11,6 @@ const characters = [
 
 
     { name: '常凯申', rarity: 'lol', avatar: '/assets/image/card/chiangkaishek_smile.webp' },
+    { name: '豆包', rarity: 'lol', avatar: '/assets/image/card/doubao.webp', sound: '/assets/sound/babylaughing.mp3' },
 ];
 window.characters = characters;
