@@ -26,22 +26,12 @@
         './assets/icon/favicon24.webp',
     ];
     if (iconList.length === 0) return;
-    const lastIcon = localStorage.getItem('lastFavicon');
-    let available = iconList;
-    if (lastIcon && iconList.length > 1) {
-        available = iconList.filter(path => path !== lastIcon);
-    }
-    const randomIcon = available[Math.floor(Math.random() * available.length)];
-    localStorage.setItem('lastFavicon', randomIcon);
-    let link = document.querySelector('link[rel="icon"]');
-    if (link) {
-        link.href = randomIcon;
-    } else {
-        link = document.createElement('link');
-        link.rel = 'icon';
-        link.href = randomIcon;
-        document.head.appendChild(link);
-    }
+    const randomIcon = iconList[Math.floor(Math.random() * iconList.length)];
+    document.querySelectorAll('link[rel="icon"]').forEach(el => el.remove());
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = randomIcon;
+    document.head.appendChild(link);
 })();
 (function() {
     const theme = localStorage.getItem('theme');

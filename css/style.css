@@ -35,12 +35,12 @@ body {
     margin: 0;
 }
 @keyframes fadeInPage {
-    0% { opacity: 0; transform: translateY(20px); }
+    0% { opacity: 0; transform: translateY(5px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeOutPage {
     0% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 0; transform: translateY(-5px); }
 }
 @keyframes ImComingFromTheBottom {
     0% { opacity: 0; transform: translateY(10mm); }
@@ -78,12 +78,12 @@ body {
     display: block;
     background-color: var(--bg-color);
     margin: 0;
-    animation: fadeInPage 0.5s ease-out both;
+    animation: fadeInPage 0.1s ease-out both;
     padding-left:15px;
     padding-right:15px;
 }
 .whole-page.fade-out {
-    animation: fadeOutPage 1s ease-in forwards !important;
+    animation: fadeOutPage 0.1s ease-in forwards !important;
 }
 .main-page {
     padding: 1mm;
