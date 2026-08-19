@@ -18,7 +18,15 @@
     --link-color: #ffaa33;
     --border-light: rgba(255, 255, 255, 0.08);
 }
-
+a{
+    cursor: url('/assets/cursor/hand.png') 6 7, auto;
+}
+button{
+    cursor: url('/assets/cursor/hand.png') 6 7, auto;
+}
+iframe{
+    cursor: url('/assets/cursor/hand.png') 6 7, auto;
+}
 * {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -33,6 +41,7 @@
 body {
     padding-top: 75px;
     margin: 0;
+    cursor: url('/assets/cursor/greenonion.png') 6 7, auto;
 }
 @keyframes fadeInPage {
     0% { opacity: 0; transform: translateY(5px); }
@@ -81,6 +90,7 @@ body {
     animation: fadeInPage 0.1s ease-out both;
     padding-left:15px;
     padding-right:15px;
+    height:100vh;
 }
 .whole-page.fade-out {
     animation: fadeOutPage 0.1s ease-in forwards !important;
@@ -111,14 +121,14 @@ body {
     font-size: 16px;
     font-family: sans-serif;
     font-weight: 500;
-    cursor: pointer;
     user-select: none;
     text-align: center;
     width: fit-content;
-    margin: 10px auto 0 auto;
-    transition: 0.8s;
+    margin: 20px auto 0 auto;
+    cursor: url('/assets/cursor/hand.png') 6 7, auto;
+    transition: transform 0.2s cubic-bezier(0.3,0.2,0.2,2), box-shadow 0.2s ease;
 }
-.randomText:hover { opacity: 0.8; }
+.randomText:hover { transform: scale(1.1); }
 .randomText:active { transform: scale(0.9); }
 .top-nav {
     margin: 0 auto;
@@ -154,6 +164,12 @@ body {
 }
 .top-nav a:active {
      background-color: #4b4b4b40; 
+}
+.theme-btn{
+    background:none; 
+    border:none; 
+    font-size:1.2cap; 
+    color:var(--link-color);
 }
 .logo {
     display: inline-block;
@@ -347,7 +363,7 @@ body {
     font-weight: 500;
     border-radius: 1mm;
     box-shadow: var(--box-shadow-color) 1.95px 1.95px 2.6px;
-    transition: transform 0.4s cubic-bezier(0, 0, 0, 2), box-shadow 0.2s ease;
+    transition: transform 0.1s cubic-bezier(0, 0, 0, 2), box-shadow 0.2s ease,background-color 0.2s ease, color 0.2s ease;
 }
 .videoplayer-choose a:hover {
     background-color: #80808012;
@@ -361,9 +377,7 @@ body {
 .gacha-container {
     max-width: 600px;
     margin: 20px auto;
-    left:0;
-    right:0;
-    padding: 5px 10px;
+    padding: 5px 5px;
     background: var(--card-bg);
     border-radius: 16px;
     text-align: center;
@@ -382,22 +396,21 @@ body {
     flex-wrap: wrap;
 }
 .gacha-btn {
-    padding: 12px 30px;
+    padding: 6px 15px;
     border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 800;
+    transition: transform 0.2s cubic-bezier(0.3,0.2,0.2,2), box-shadow 0.2s cubic-bezier(0.3,0.2,0.2,2);
     background: var(--link-color);
     color: #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .gacha-btn:hover {
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px) scale(1.1);
     box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
-.gacha-btn:active { transform: scale(0.96); }
+.gacha-btn:active { transform: scale(0.9); }
 .gacha-result {
     margin: 25px 0;
     display: flex;
@@ -411,7 +424,6 @@ body {
     width: 100px;
     height: 140px;
     perspective: 800px;
-    cursor: default;
     margin:15px 10px;
 }
 .gacha-card-inner {
