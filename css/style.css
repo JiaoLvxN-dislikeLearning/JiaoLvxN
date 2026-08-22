@@ -39,7 +39,7 @@ iframe{
     transition: opacity 1.2s ease;
 }
 body {
-    padding-top: 75px;
+    padding-top: 67px;
     margin: 0;
     cursor: url('/assets/cursor/greenonion.png') 6 7, auto;
 }
@@ -135,15 +135,16 @@ body {
     position: fixed;
     display: flex;
     overflow: auto;
-    top: 8px;
-    width: 600px;
+    top:0;
+    left:0;
+    right:0;
     padding: 8px 32px;
+    width:auto;
     left:0;
     right:0;
     justify-content: space-between;
     font-weight: 900;
     font-size: 2cap;
-    border-radius: 2mm;
     background-color: var(--nav-bg);
     backdrop-filter: blur(2px);
     border-bottom: 1px solid var(--border-light);
@@ -537,9 +538,6 @@ body {
     transition: background-color 0.8s ease, color 1.6s ease, box-shadow 0.8s ease, border-color 0.8s ease;
 }
 @media (max-width: 1234px) {
-    .top-nav {
-        width: 600px;
-    }
     .news-roll {
         width:700px;
         height:210px;
@@ -558,8 +556,15 @@ body {
     }
 }
 @media (max-width: 900px) {
+    .news-roll {
+        width:600px;
+        height:180px;
+    }
+    .news-roll img{
+        width:600px;
+        height:180px;
+    }
     .top-nav {
-        width: 400px;
         font-size: 20px;
     }
     .morepage-link {
@@ -609,6 +614,9 @@ body {
     }
 }
 @media (max-width: 700px) {
+    body {
+        padding-top: 60px;
+    }
     .top-nav {
         font-size:18px;
     }
@@ -644,13 +652,18 @@ body {
     }
 }
 @media (max-width: 600px) {
+    body {
+        padding-top: 48px;
+    }
     .morepage-link {
         width:400px;
     }
 }
 @media (max-width: 500px) {
+    body {
+        padding-top: 40px;
+    }
     .top-nav {
-        width: 300px;
         font-size: 12px;
     }
     .morepage-link {
